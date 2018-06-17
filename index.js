@@ -68,8 +68,9 @@ client.on('message', message => {
 	}
 
 	try {
-		message.react('380453766253772810');	//marcel bavis
-		command.execute(message, args);
+		message.react('380453766253772810')	//marcel bavis
+		.then(() => command.execute(message, args))
+		.catch(() => console.error('One of the emojis failed to react.'));
 	}
 	catch (error) {
 		console.error(error);

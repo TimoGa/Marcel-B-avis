@@ -2,8 +2,8 @@ module.exports = {
 	name: 'hallo',
 	description: 'Hallo!',
 	execute(message) {
-		message.channel.send("Hallo, Marvel B'avis, 1&1&1");
-		message.react('☎');
-		message.react('🌐');
+		message.channel.send("Hallo, Marvel B'avis, 1&1&1")
+		.then(() => message.react('☎'))
+		.then(() => message.react('🌐'));
 	},
 };
