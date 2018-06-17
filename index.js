@@ -1,4 +1,5 @@
 const fs = require('fs');
+const ytdl = require('ytdl-core');
 const Discord = require('discord.js');
 const { prefix, token } = require('./config.json');
 
@@ -77,6 +78,25 @@ client.on('message', message => {
 		console.error(error);
 		message.reply('there was an error trying to execute that command!');
 	}
+});
+
+client.on('message', message => {
+    if (message.content === '!play') {
+        if (message.channel.type !== 'text') return;
+
+        const { voiceChannel } = message.member;
+
+        if (!voiceChannel) {
+            return message.reply('please join a voice channel first!');
+        }
+
+        voiceChannel.join().then(connection => {
+            const stream = ytdl('https://www.youtube.com/watch?v=D57Y1PruTlw', { filter: 'audioonly' });
+            const dispatcher = connection.playStream(stream);
+
+            dispatcher.on('end', () => voiceChannel.leave());
+        });
+    }
 });
 
 client.login(token);
