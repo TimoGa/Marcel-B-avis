@@ -1,5 +1,5 @@
 const fs = require('fs');
-const ytdl = require('ytdl-core');
+const ytdl = require('ytdl-core');	//youtube1
 const Discord = require('discord.js');
 const { prefix, token } = require('./config.json');
 
@@ -80,7 +80,7 @@ client.on('message', message => {
 	}
 });
 
-client.on('message', message => {
+client.on('message', message => {	//youtube1
     if (message.content === '111sing') {
         if (message.channel.type !== 'text') return;
 
