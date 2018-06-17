@@ -81,7 +81,7 @@ client.on('message', message => {
 });
 
 client.on('message', message => {
-    if (message.content === '!play') {
+    if (message.content === '111sing') {
         if (message.channel.type !== 'text') return;
 
         const { voiceChannel } = message.member;
@@ -91,7 +91,7 @@ client.on('message', message => {
         }
 
         voiceChannel.join().then(connection => {
-            const stream = ytdl('https://www.youtube.com/watch?v=D57Y1PruTlw', { filter: 'audioonly' });
+            const stream = ytdl('https://www.youtube.com/watch?v=D9LxMut3TMM', { filter: 'audioonly' });
             const dispatcher = connection.playStream(stream);
 
             dispatcher.on('end', () => voiceChannel.leave());
