@@ -68,6 +68,7 @@ client.on('message', message => {
 	}
 
 	try {
+		message.react('380453766253772810');	//marcel bavis
 		command.execute(message, args);
 	}
 	catch (error) {
