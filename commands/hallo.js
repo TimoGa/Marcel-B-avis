@@ -3,5 +3,7 @@ module.exports = {
 	description: 'Hallo!',
 	execute(message) {
 		message.channel.send("Hallo, Marvel B'avis, 1&1&1");
+		message.react('☎');
+		message.react('🌐');
 	},
 };
