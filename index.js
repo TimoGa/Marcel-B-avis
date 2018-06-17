@@ -4,6 +4,7 @@ const { prefix, token } = require('./config.json');
 
 const client = new Discord.Client();
 client.commands = new Discord.Collection();
+client.on('ready', () => {client.user.setActivity('111help', { type: 'LISTENING' });});	//status
 
 const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
 
