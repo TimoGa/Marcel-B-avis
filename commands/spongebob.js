@@ -1,9 +1,9 @@
 const ytdl = require('ytdl-core');
 
 module.exports = {
-	name: 'play',
-	description: 'Play any YouTube-Video!',
-	execute(message, args) {
+	name: 'spongebob',
+	description: 'Play 10h of Spongebob!',
+	execute(message) {
         if (message.channel.type !== 'text') return;
 
         const { voiceChannel } = message.member;
@@ -13,7 +13,7 @@ module.exports = {
         }
 
         voiceChannel.join().then(connection => {
-            const stream = ytdl(args[0], { filter: 'audioonly' });
+            const stream = ytdl('https://www.youtube.com/watch?v=51skM6WA-dg', { filter: 'audioonly' });
             const dispatcher = connection.playStream(stream);
 
             //dispatcher.on('end', () => voiceChannel.leave());
