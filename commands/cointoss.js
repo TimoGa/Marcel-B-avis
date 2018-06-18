@@ -1,5 +1,5 @@
 module.exports = {
-	name: 'kick',
+	name: 'cointoss',
 	description: 'End an argument the honorable way.',
 	guildOnly: true,
 	execute(message, args) {
