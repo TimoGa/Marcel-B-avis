@@ -1,5 +1,4 @@
 const fs = require('fs');
-//const ytdl = require('ytdl-core');	//youtube1
 const Discord = require('discord.js');
 const { prefix, token } = require('./config.json');
 
@@ -78,7 +77,7 @@ client.on('message', message => {
 	}
 
 	try {
-		message.react('380453766253772810')	//marcel bavis
+		message.react('380453766253772810')	//marcel bavis (react)
 		.then(() => command.execute(message, args))
 		.catch(() => console.error('One of the emojis failed to react.'));
 	}
@@ -87,25 +86,5 @@ client.on('message', message => {
 		message.reply('there was an error trying to execute that command!');
 	}
 });
-
-/*client.on('message', message => {	//youtube1
-    if (message.content === '111sing') {
-        if (message.channel.type !== 'text') return;
-
-        const { voiceChannel } = message.member;
-
-        if (!voiceChannel) {
-            return message.reply('please join a voice channel first!');
-        }
-
-        voiceChannel.join().then(connection => {
-			message.react('380453766253772810');
-			const stream = ytdl('https://www.youtube.com/watch?v=D9LxMut3TMM', { filter: 'audioonly' });
-            const dispatcher = connection.playStream(stream);
-
-            dispatcher.on('end', () => voiceChannel.leave());
-        });
-    }
-});*/
 
 client.login(token);

@@ -1,6 +1,6 @@
 module.exports = {
 	name: 'react',
-	description: 'Reaktion!',
+	description: 'Der Bot versucht Emotionen zu zeigen!',
 	execute(message) {
         var chance = Math.floor(Math.random() * 10) + 1;
 
