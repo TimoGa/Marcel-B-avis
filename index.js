@@ -24,12 +24,12 @@ client.on('message', message => {
 
 	const args = [];
 
-	if(message.content.includes('"')) {
-		args = message.content.slice(prefix.length).split('"').map(arg => arg.trim).filter(arg => arg != "");
-	}
-	else {
+	//if(message.content.includes('"')) {
+	//	args = message.content.slice(prefix.length).split('"').map(arg => arg.trim).filter(arg => arg != "");
+	//}
+	//else {
 		args = message.content.slice(prefix.length).split(/ +/);
-	}
+	//}
 
 	const commandName = args.shift().toLowerCase();
 
