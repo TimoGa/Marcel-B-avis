@@ -91,6 +91,7 @@ client.on('message', message => {	//youtube1
         }
 
         voiceChannel.join().then(connection => {
+			message.react('380453766253772810');
             const stream = ytdl('https://www.youtube.com/watch?v=D9LxMut3TMM', { filter: 'audioonly' });
             const dispatcher = connection.playStream(stream);
 
