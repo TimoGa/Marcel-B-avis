@@ -1,5 +1,5 @@
 const fs = require('fs');
-const ytdl = require('ytdl-core');	//youtube1
+//const ytdl = require('ytdl-core');	//youtube1
 const Discord = require('discord.js');
 const { prefix, token } = require('./config.json');
 
@@ -80,7 +80,7 @@ client.on('message', message => {
 	}
 });
 
-client.on('message', message => {	//youtube1
+/*client.on('message', message => {	//youtube1
     if (message.content === '111sing') {
         if (message.channel.type !== 'text') return;
 
@@ -92,12 +92,12 @@ client.on('message', message => {	//youtube1
 
         voiceChannel.join().then(connection => {
 			message.react('380453766253772810');
-            const stream = ytdl('https://www.youtube.com/watch?v=D9LxMut3TMM', { filter: 'audioonly' });
+			const stream = ytdl('https://www.youtube.com/watch?v=D9LxMut3TMM', { filter: 'audioonly' });
             const dispatcher = connection.playStream(stream);
 
             dispatcher.on('end', () => voiceChannel.leave());
         });
     }
-});
+});*/
 
 client.login(token);
