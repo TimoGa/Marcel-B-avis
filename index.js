@@ -22,13 +22,13 @@ client.on('ready', () => {
 client.on('message', message => {
 	if (!message.content.startsWith(prefix) || message.author.bot) return;
 
-	//const args = [];
+	const args = null;
 
 	//if(message.content.includes('"')) {
 	//	args = message.content.slice(prefix.length).split('"').map(arg => arg.trim).filter(arg => arg != "");
 	//}
 	//else {
-	const args = message.content.slice(prefix.length).split(/ +/);
+	args = message.content.slice(prefix.length).split(/ +/);
 	//}
 
 	const commandName = args.shift().toLowerCase();
