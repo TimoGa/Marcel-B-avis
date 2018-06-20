@@ -1,6 +1,6 @@
 module.exports = {
-	name: 'stream',
-	description: 'Play jbradio2\'s webradio!',
+	name: 'radiolink',
+	description: 'Play any webradio!',
 	execute(message, args) {
         if (message.channel.type !== 'text') return;
 
@@ -11,7 +11,7 @@ module.exports = {
         }
 
         voiceChannel.join().then(connection => {
-            const dispatcher = connection.playStream('http://bluford.torontocast.com:8482/live.opus');  //webradio: https://jbradio2.ca/player.php
+            const dispatcher = connection.playStream(args[0]);
         });
     },
 };
