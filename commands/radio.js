@@ -1,6 +1,6 @@
 module.exports = {
 	name: 'radio',
-	description: 'Play jbradio\'s webradio!',
+	description: 'Plays a hq webradio!',
 	execute(message) {
         if (message.channel.type !== 'text') return;
 
@@ -11,7 +11,7 @@ module.exports = {
         }
 
         voiceChannel.join().then(connection => {
-            const dispatcher = connection.playStream('http://bluford.torontocast.com:8482/live.opus');
+            const dispatcher = connection.playStream('http://tophits.radiomonster.fm/320.mp3');  //http://bluford.torontocast.com:8482/live.opus
         });
     },
 };
